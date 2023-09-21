@@ -1,0 +1,81 @@
+import java.util.Scanner;
+
+public class Mascota {
+
+    private String nombre;
+    private String fechaNacimiento;
+    private String numeroChip;
+    private String nombreDueno;
+
+    public Mascota(String nombre, String fechaNacimiento, String numeroChip, String nombreDueno) {
+        this.nombre = nombre;
+        this.fechaNacimiento = fechaNacimiento;
+        this.numeroChip = numeroChip;
+        this.nombreDueno = nombreDueno;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Mascota[] arrMascota = new Mascota[15];
+        int contadorMascotas = 0;
+
+        while (true) {
+            System.out.println(n Menú Principal );
+            System.out.println(1. Crear una mascota);
+            System.out.println(2. Editar una mascota);
+            System.out.println(3. Eliminar una mascota);
+            System.out.println(4. Listar las mascotas creadas);
+            System.out.println(5. Salir del sistema);
+            System.out.print(Elija una opción );
+            int opcion = sc.nextInt();
+            sc.nextLine();   Consumir la nueva línea después de leer el número
+
+            switch (opcion) {
+                case 1
+                    if (contadorMascotas  arrMascota.length) {
+                        System.out.println(n Crear una mascota );
+                        System.out.print(Ingresa el nombre de la mascota );
+                        String nombre = sc.nextLine();
+                        System.out.print(Ingresa la fecha de nacimiento de la mascota );
+                        String fechaNacimiento = sc.nextLine();
+                        System.out.print(Ingresa el número de chip de la mascota );
+                        String numeroChip = sc.nextLine();
+                        System.out.print(Ingresa el nombre del dueño de la mascota );
+                        String nombreDueno = sc.nextLine();
+
+                        arrMascota[contadorMascotas] = new Mascota(nombre, fechaNacimiento, numeroChip, nombreDueno);
+                        contadorMascotas++;
+                        System.out.println(Mascota creada con éxito.);
+                    } else {
+                        System.out.println(No puedes agregar más mascotas. La lista está llena.);
+                    }
+                    break;
+                case 2
+                    System.out.println(n Editar una mascota );
+                     Aquí puedes agregar la lógica para editar una mascota
+                    break;
+                case 3
+                    System.out.println(n Eliminar una mascota );
+                     Aquí puedes agregar la lógica para eliminar una mascota
+                    break;
+                case 4
+                    System.out.println(n Listado de mascotas creadas );
+                    for (int i = 0; i  contadorMascotas; i++) {
+                        System.out.println(Mascota  + (i + 1) + );
+                        System.out.println(Nombre  + arrMascota[i].nombre);
+                        System.out.println(Fecha de Nacimiento  + arrMascota[i].fechaNacimiento);
+                        System.out.println(Número de Chip  + arrMascota[i].numeroChip);
+                        System.out.println(Nombre del Dueño  + arrMascota[i].nombreDueno);
+                        System.out.println();
+                    }
+                    break;
+                case 5
+                    System.out.println(Saliendo del sistema. ¡Hasta luego!);
+                    System.exit(0);
+                default
+                    System.out.println(Opción no válida. Por favor, elija una opción válida.);
+                    break;
+            }
+        }
+    }
+}
